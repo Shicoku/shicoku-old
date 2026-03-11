@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.cmt {
+  font-family: kei;
+}
+
+.pass {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 1.3rem;
+}
+
+.menu-btn {
+  top: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .margin {
+    margin-top: 70px;
+    flex: 1;
+  }
+
+  .card-img {
+    margin-left: 20px;
+  }
+
+  .pass {
+    margin-top: -15px;
+    margin-left: 10px;
+    font-size: 1.3rem;
+  }
+
+  .name {
+    margin-top: 5px;
+  }
+
+  .summary {
+    margin-top: -40px;
+    font-size: 1.8rem;
+  }
+
+  .cmt {
+    margin-top: 5px;
+    font-size: 1.15rem;
+    width: 380px;
+  }
+}

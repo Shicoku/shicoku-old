@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--カード-->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shicoku / シュー" />
+    <meta property="og:description" content="Shicoku / シューの公式ホームページ。" />
+    <meta property="og:url" content="https://shicoku.vercel.app/" />
+    <meta property="og:site_name" content="Shicoku / シュー" />
+    <meta property="og:image" content="https://shicoku.vercel.app/img/works_img/shicoku.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@H2DH8K" />
+    <!--アイコン-->
+    <link rel="icon" type="image/png" href="../img/shicoku.png" />
+    <link rel="shortcut icon" type="image/png" href="../img/shicoku.png" />
+    <link rel="apple-touch-icon" href="../img/shicoku.png" />
+    <title>Shicoku / シュー</title>
+    <!--styles-->
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
+    <link rel="stylesheet" href="../styles/works.css" />
+    <!--scripts-->
+    <script src="https://kit.fontawesome.com/4a6af072b1.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div>
+      <div id="header"></div>
+
+      <div class="margin">
+        <div class="pass"><a href="../works.html" class="link">Works</a> / <a class="link">ホームページ</a></div>
+        <div>
+          <div class="left">
+            <img src="../img/works_img/shicoku.png" class="card-img" alt="shicoku" />
+          </div>
+          <div class="left">
+            <p class="name">ホームページ</p>
+            <p class="summary">2023.08.15</p>
+            <p class="cmt">ポートフォリオの代わりに作成したサイトです。 <br />デザイン・制作などすべて1人で行っています。 <br />1からコードを書いて、割とこだわっています。</p>
+            <ul class="breadcrumb">
+              <li><a></a></li>
+              <li><a>リンク</a></li>
+            </ul>
+            <p>
+              <a class="card-txt-page" href="https://shicoku.vercel.app/"><i class="fa-solid fa-house"></i>Home Page→</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+      const headerContainer = document.getElementById("header");
+      fetch("../header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          headerContainer.innerHTML = html;
+
+          const currentPage = "works.html";
+
+          const links = headerContainer.querySelectorAll("a[data-page]");
+          links.forEach((link) => {
+            if (link.getAttribute("data-page") === currentPage) {
+              link.classList.add("here");
+              link.classList.add("here2");
+            }
+          });
+        });
+
+      fetch("../footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

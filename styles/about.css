@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+div {
+  font-family: kei;
+}
+
+img {
+  margin-top: 30%;
+}
+
+p {
+  margin-left: 70px;
+  font-size: 1.5rem;
+}
+
+.name {
+  font-family: kt;
+  font-size: 3.5rem;
+}
+
+.summary {
+  font-family: kt;
+  margin-top: -40px;
+  font-size: 2.5rem;
+}
+
+.cmt {
+  font-family: kt;
+  margin-top: -20px;
+  font-size: 1.5rem;
+}
+
+.profile p {
+  margin: 0.3em 0px;
+  margin-left: 70px;
+}
+
+@media screen and (max-width: 480px) {
+  img {
+    margin-top: 0%;
+    margin-left: 20%;
+  }
+
+  p {
+    margin-left: 20px;
+    font-size: 1.1rem;
+  }
+
+  .name {
+    margin-top: -30px;
+    margin-left: 20px;
+    font-size: 2.8rem;
+  }
+
+  .summary {
+    margin-top: -40px;
+    margin-left: 20px;
+    font-size: 1.6rem;
+  }
+
+  .cmt {
+    margin-left: 20px;
+    font-size: 1.1rem;
+    width: 380px;
+  }
+
+  .profile p {
+    margin: 0.3em 0px;
+    margin-left: 20px;
+  }
+}

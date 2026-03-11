@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--カード-->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shicoku / シュー" />
+    <meta property="og:description" content="Shicoku / シューの公式ホームページ。" />
+    <meta property="og:url" content="https://shicoku.vercel.app/" />
+    <meta property="og:site_name" content="Shicoku / シュー" />
+    <meta property="og:image" content="https://shicoku.vercel.app/img/works_img/shicoku.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@H2DH8K" />
+    <!--アイコン-->
+    <link rel="icon" type="image/png" href="./img/shicoku.png" />
+    <link rel="shortcut icon" type="image/png" href="./img/shicoku.png" />
+    <link rel="apple-touch-icon" href="./img/shicoku.png" />
+    <title>Shicoku / シュー</title>
+    <!--styles-->
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <!--scripts-->
+    <script src="https://kit.fontawesome.com/4a6af072b1.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div class="margin">
+      <div class="left">
+        <img src="./img/shicoku.png" alt="shicoku" />
+      </div>
+      <div class="left">
+        <p class="name">Shicoku / シュー</p>
+        <p class="summary">学生・プログラマー志望</p>
+        <p class="cmt">多趣味な学生です。 <br />好きなことを好きなようにします。</p>
+        <ul class="breadcrumb">
+          <li><a></a></li>
+          <li><a>好きなこと</a></li>
+        </ul>
+        <p>プログラミング / 電子工作 / 音楽 / ギター / アニメ / 漫画 / ゲーム</p>
+        <ul class="breadcrumb">
+          <li><a></a></li>
+          <li><a>使用ツール</a></li>
+        </ul>
+        <p>VScode / Clip Studio / Studio One / KiCad</p>
+        <ul class="breadcrumb">
+          <li><a></a></li>
+          <li><a>使用言語</a></li>
+        </ul>
+        <p>日本語 / ポルトガル語 / CSS / JavaScript / Python / Arduino(C/C++)</p>
+
+        <ul class="breadcrumb">
+          <li><a></a></li>
+          <li><a>プロフィール</a></li>
+        </ul>
+        <div class="profile">
+          <p>2006.06.26 <span class="mrg">生まれる</span></p>
+          <p>2019.08.xx <span class="mrg">SNSの世界に飛び込む</span></p>
+          <p>
+            2020.xx.xx <span class="mrg">プログラムと出会う</span> <br />
+            <span class="mrg2">「しゃー」を開設</span>
+          </p>
+          <p>2021.xx.xx <span class="mrg">「シューのリソース工房」を開設</span></p>
+          <p>2022.04.06 <span class="mrg">高校入学</span></p>
+          <p>2023.07.13 <span class="mrg">活動名を「Shicoku / 詩哭」へ変更</span></p>
+          <p>2023.08.15 <span class="mrg">「Shicoku / シュー」を開設</span></p>
+          <p>2025.03.03 <span class="mrg">高校卒業</span></p>
+          <p>2025.04.01 <span class="mrg">大学入学</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+      const headerContainer = document.getElementById("header");
+      fetch("/header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          headerContainer.innerHTML = html;
+
+          const currentPage = location.pathname.split("/").pop();
+
+          const links = headerContainer.querySelectorAll("a[data-page]");
+          links.forEach((link) => {
+            if (link.getAttribute("data-page") === currentPage) {
+              link.classList.add("here");
+              link.classList.add("here2");
+            }
+          });
+        });
+
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
